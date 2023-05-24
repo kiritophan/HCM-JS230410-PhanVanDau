@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sign-container {
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;    
+}
+
+.sign-container h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #3c00a0;
+    position: relative;
+}
+
+/* Tạo dấu gạch chân dưới tiêu đề */
+.sign-container h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    position: absolute;
+    background-color: #3c00a0;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.div-two .input-group {
+    width: 90%;
+    max-width: 450px;
+    border: 1px solid black;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 50px 60px 70px;
+    border-radius: 20px;
+}
+
+.input-group .input-field {
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.input-field i {
+    margin-left: 15px;
+    color: #999;
+}
+
+form p {
+    text-decoration: none;
+    color: #3c00a0;
+    margin-bottom: 10px;
+}
+
+.sign {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign button {
+    flex-basis: 48%;
+    background: #3c00a0;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+.sign button.disable {
+    background: #eaeaea;
+    color: #555;
+
+}
+
+.div-two .xMark {
+    right: -300px;
+}
+
+.show {
+    display: none;
+    transition: display 4s;
+}
+

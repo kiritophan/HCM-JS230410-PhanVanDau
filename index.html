@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    .webfilm .content {
+        display: block;
+    }
+
+    .list-container {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .list-container li {
+        flex: 1;
+        border: 1px solid black;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        background-color: #db59a0;
+    }
+
+    .webfilm .footer-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        margin: 50px auto;
+        width: 95%;
+    }
+    .movie{
+        padding: 10px;
+        border: 1px solid black;
+    }
+    .movie img{
+        width: 100%;
+    }
+    .anh-phimhanhdong {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .showActionFilm {
+        display: block;
+    }
+    .showActionFilm img {
+        object-fit: cover;
+    }
+
+    .showFilmKinhDi {
+        display: block;
+    }
+
+    .showFilmKorea {
+        display: block;
+    }
+
+    .showFilmAnime {
+        display: block;
+    }
+    .input{
+        border: 1px solid black;
+        width: 400px;
+    }
+</style>
+
+<body>
+    <div class="webfilm">
+        <div class="content">
+            <div class="content-menu">
+                <h1>Menu
+                    <i class="fa-solid fa-bars"></i>
+                    <input type="text" placeholder="Nhập phim cần tìm kiếm" class = "input" id="searchId">
+                    <button onclick="SearchMovie()">SEARCH</button>
+                </h1>
+                
+
+                <!-- signup -->
+                <div class="sign-container">
+                    <button id="button" onclick="Click()" style="margin-left: 1300px;"> Sign Up </button>
+                    <div class="div-two show" id="divTwo">
+                        <form class="input-group">
+                            <button class="xMark" onclick="xMark()"> </button> <br>
+                            <h1 id="title"> Sign Up </h1> <br>
+                            <div class="input-field" id="nameField">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" placeholder="Name">
+                            </div>
+                            <div class="input-field">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="text" placeholder="Email id"> <br>
+                            </div>
+                            <div class="input-field" id="emailField">
+                                <i class="fa-solid fa-repeat"></i>
+                                <input type="text" placeholder="Repeat email">
+                            </div>
+                            <div class="input-field">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="text" placeholder="Password"><br>
+                            </div>
+                            <div class="input-field" id="passwordField">
+                                <i class="fa-solid fa-repeat"></i>
+                                <input type="text" placeholder="Repeat password">
+                            </div>
+                            <p> Lost password? <a href="#"> Click Here! </a> </p>
+                            <div class="sign">
+                                <button type="button" id="signUp"> Sign Up </button>
+                                <button type="button" id="signIn" class="disable"> Sign in </button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="header-container">
+                <ul class="list-container">
+                    <li onclick="showFilmHanhDong()" >PHIM HÀNH ĐỘNG</li>
+                    <li onclick="showFilmKinhDi()">PHIM KINH DỊ</li>
+                    <li onclick="showFilmKorea()">PHIM KOREA</li>
+                    <li onclick="showFilmAnime()">ANIME</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="render">
+
+
+        </div>
+        <div class="footer-container" id="listFilm">
+            <div class="movie showActionFilm" id="">
+                <h3>PHIM HÀNH ĐỘNG</h3>
+                <img src="./img/Avengers_Endgame_poster.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hành động</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/Fast-X-6749-1684147430.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hành động</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/fast2.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hành động</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/FastandFurious6-teaserposter.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hành động</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+            </div>
+            <div class="movie showFilmKinhDi" id="filmKinhDi">
+                <h3>PHIM KINH DỊ</h3>
+                <img src="./img/phim-kinh-di_bbsi.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: kinh dị</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/photo-1-16170963614151148635066.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: kinh dị</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/kinhdi.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: kinh dị</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/phim-kinh-di-viet-nam-2021-2.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: kinh dị</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+
+            </div>
+            <div class="movie showFilmKorea" id="filmKorea">
+                <h3>PHIM KOREA</h3>
+                <img src="./img/bpxLZox.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hàn Quốc</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/0417_saostar-fuf387epxiuczs02.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hàn Quốc</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/phimhan.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hàn Quốc</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/traintobuson.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Hàn Quốc</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+            </div>
+            <div class="movie showFilmAnime" id="filmAnime">
+                <h3>ANIME</h3>
+                <img src="./img/One_Piece,_Volume_61_Cover_(Japanese).jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Anime</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg"
+                    alt="" class="anh-phimhanhdong">
+                    <div class="movie-description">
+                        <h3>The Avenger 2020</h3>
+                        <h3>Thể loại: Anime</h3>
+                        <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                        <p>Ngày chiếu: 2023/04/24</p>
+                    </div>
+                <img src="./img/opm.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Anime</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+                <img src="./img/naruto.jpg" alt="" class="anh-phimhanhdong">
+                <div class="movie-description">
+                    <h3>The Avenger 2020</h3>
+                    <h3>Thể loại: Anime</h3>
+                    <p>Content: Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Ngày chiếu: 2023/04/24</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            comment va danh gia
+        </div>
+    </div>
+
+    <script>
+        /* ---------------------------------Sign Up----------------------------------------- */
+        let editForm = document.querySelector(".div-two");
+        let flag = true;
+        let count = 0;
+        let test;
+        let button = document.getElementById("button");
+        let signUp = document.getElementById("signUp");
+        let signIn = document.getElementById("signIn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+        let emailField = document.getElementById("emailField");
+        let repeatEmailField = document.getElementById("repeatEmailField");
+        let passwordField = document.getElementById("passwordField");
+        let repeatPasswordField = document.getElementById("repeatPasswordField");
+
+
+        let signInUser = [];
+
+
+
+
+
+        signIn.onclick = function addSignIn() {
+            nameField.style.maxHeight = "0";
+            emailField.style.maxHeight = "0";
+            passwordField.style.maxHeight = "0";
+            title.innerHTML = "Sign In";
+            signUp.classList.add("disable");
+            signIn.classList.remove("disable");
+
+            document.getElementById("nameField").value;
+            document.getElementById("emailField").value;
+            document.getElementById("passwordField").value;
+
+            let objSingIn = {
+                nameField: nameField,
+                emailField: emailField,
+                passwordField: passwordField,
+            };
+
+        }
+        signUp.onclick = function addSingUp() {
+            nameField.style.maxHeight = "60px";
+            emailField.style.maxHeight = "60px";
+            passwordField.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signUp.classList.remove("disable");
+            signIn.classList.add("disable");
+
+
+        }
+
+        /* Gọi bảng ra */
+        function Click() {
+            let id = document.getElementById("divTwo");
+            id.classList.toggle("show");
+            if (flag) {
+                test = setInterval(change, 5)
+            }
+        }
+        function change() {
+            count += 5;
+            let id = document.getElementById("divTwo");
+            id.style.top = `${count}px`;
+            console.log(count);
+            if (count == 100) {
+                clearInterval(test);
+                count = 0;
+                return;
+            }
+        }
+        function xMark() {
+            let id = document.getElementById("divTwo");
+            id.classList.toggle("show");
+            flag = true;
+        }
+        /* ---------------------------------Sign Up----------------------------------------- */
+
+        
+        function showFilmHanhDong() {
+            let result = "";
+            result = `
+            <div class="movie showActionFilm" id="actionFilm">
+                <h3>phim hanh dong</h3>
+                <img src="./img/Avengers_Endgame_poster.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/Fast-X-6749-1684147430.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/fast2.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/FastandFurious6-teaserposter.jpg" alt="" class="anh-phimhanhdong">
+            </div>
+        `
+            document.getElementById("listFilm").innerHTML = `${result}`;
+        }
+        function showFilmKinhDi() {
+            let result = "";
+            result = `
+            <div class="movie showFilmKinhDi" id="filmKinhDi">
+                <h3>phim kinh di</h3>
+                <img src="./img/phim-kinh-di_bbsi.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/photo-1-16170963614151148635066.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/kinhdi.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/phim-kinh-di-viet-nam-2021-2.jpg" alt="" class="anh-phimhanhdong">
+            </div>
+        `
+            document.getElementById("listFilm").innerHTML = `${result}`;
+        }
+        function showFilmKorea() {
+            let result = "";
+            result = `
+            <div class="movie showFilmKorea" id="filmKorea">
+                <h3>phim han quoc</h3>
+                <img src="./img/bpxLZox.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/0417_saostar-fuf387epxiuczs02.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/phimhan.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/traintobuson.jpg" alt="" class="anh-phimhanhdong">
+            </div>
+        `
+            document.getElementById("listFilm").innerHTML = `${result}`;
+        }
+
+
+
+        function showFilmAnime() {
+                let result = "";
+                result = `
+            <div class="movie showFilmAnime" id="filmAnime">
+                <h3>phim hoat hinh</h3>
+                <img src="./img/One_Piece,_Volume_61_Cover_(Japanese).jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/MV5BYTIxNjk3YjItYmYzMC00ZTdmLTk0NGUtZmNlZTA0NWFkZDMwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg"
+                    alt="" class="anh-phimhanhdong" class="anh-phimhanhdong">
+                <img src="./img/opm.jpg" alt="" class="anh-phimhanhdong">
+                <img src="./img/naruto.jpg" alt="" class="anh-phimhanhdong">
+            </div>
+        `
+                document.getElementById("listFilm").innerHTML = `${result}`;
+            }
+
+
+
+    </script>
+</body>
+
+</html>
